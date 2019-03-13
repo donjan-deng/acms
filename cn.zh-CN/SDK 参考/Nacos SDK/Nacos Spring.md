@@ -7,6 +7,20 @@
 -   您已成功创建[创建命名空间](../../../../../intl.zh-CN/用户指南/创建命名空间.md#)。
 -   您已成功[创建配置](../../../../../intl.zh-CN/用户指南/创建配置.md#)，并将配置格式选择 `Properties`。
 
+**说明：** 
+
+打开 ACM 控制台，创建配置。
+
+-   Data ID ：本例中为 `com.alibaba.nacos.example.properties`
+
+-   Group：本例中为 `DEFAULT_GROUP`
+-   配置格式选择 `Properties`，配置内容即为想要注入到应用中的具体 key-value，本例中为：
+
+
+```
+connectTimeoutInMills=3000
+```
+
 ## Nacos Spring SDK 的使用步骤 {#section_uxl_jrs_ngb .section}
 
 您可以下载[demo 工程](https://github.com/nacos-group/nacos-examples/tree/acm/nacos-spring-example/nacos-spring-config-example)来操作以下步骤。
@@ -36,11 +50,11 @@
 
 3.  使用 `@NacosPropertySource` 加载配置源，并开启自动更新。
 
-    **说明：** 请将 `${dataId}` 替换成您的配置的 dataId。
+    **说明：** 实际开发时，请将 `com.alibaba.nacos.example.properties` 替换成您的 ACM 配置的 Data ID。
 
     ```
     
-    @NacosPropertySource(dataId = "${dataId}", autoRefreshed = true)
+    @NacosPropertySource(dataId = "com.alibaba.nacos.example.properties", autoRefreshed = true)
     public class NacosConfiguration {
     }
     ```
@@ -66,13 +80,15 @@
 5.  打开 ACM 控制台，在配置列表中的目标配置右侧**操作**栏单击**编辑**，更改配置内容为想要注入到应用中的具体 key-value 并单击**发布**。例如：
 
     ```
-    connectTimeoutInMills=3000
+    connectTimeoutInMills=6000
     ```
 
+    动态发布配置之后，本地工程的 Console 区域会打印日志，您可以根据日志信息检查是否发布成功。
 
-动态发布配置之后，本地工程的 Console 区域会打印日志，您可以根据日志信息检查是否发布成功。
 
 ## 相关文档 {#section_jpz_z3x_fgb .section}
 
 -   [Nacos Spring Project](https://github.com/nacos-group/nacos-spring-project/blob/master/README.md)
+-   [ACM 无缝支持 Spring 全栈](https://yq.aliyun.com/articles/688108)
+-   [公开课视频：ACM 无缝支持 Spring 全栈](https://yq.aliyun.com/live/853)
 
