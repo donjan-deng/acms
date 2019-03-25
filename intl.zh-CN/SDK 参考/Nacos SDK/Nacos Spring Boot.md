@@ -35,6 +35,8 @@ connectTimeoutInMills=3000
     </dependency>
     ```
 
+    **说明：** nacos-config-spring-boot-starter 版本为 0.2.x.RELEASE 对应的是 Spring Boot 2.x 版本；版本 0.1.x.RELEASE 对应的是 Spring Boot 1.x 版本。使用时请根据 Spring Boot 版本选择相应的 nacos-config-spring-boot-starter 版本。
+
 2.  在 application.properties 文件中配置连接信息。
 
     **说明：** 
