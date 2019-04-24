@@ -24,7 +24,7 @@ ACM SDK 的功能特性如下：
 |支持多 IP LB 方式进行服务端连接\*|支持|支持|支持|支持|支持|支持|支持|
 |支持 HmacSHA1 算法方式用户认证|支持|支持|支持|支持|支持|支持|支持|
 |支持本地缓存备份\*\*|支持|支持|支持|支持|支持|不支持|支持|
-|[支持 ECS 实例 RAM 角色鉴权](../../../../../intl.zh-CN/用户指南/通过 ECS 实例 RAM 角色访问 ACM.md#)|支持|支持|支持|不支持|不支持|不支持|支持|
+|[支持 ECS 实例 RAM 角色鉴权](../../../../intl.zh-CN/访问控制/通过 ECS 实例 RAM 角色访问 ACM.md#)|支持|支持|支持|不支持|不支持|不支持|支持|
 |开源地址|计划中|计划中|[acm-sdk-python](https://github.com/alibaba/acm-sdk-python)|计划中|计划中|[acm-sdk-php](https://github.com/alibaba/acm-sdk-php)|[Nacos](https://github.com/alibaba/nacos)|
 
 -   \* 多 IP LB 方式是指 ACM SDK 基于地址服务器返回的多 ACM 服务端 IP 地址的 LoadBalance 功能，以提高性能和实现高可用。
