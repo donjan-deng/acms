@@ -1,6 +1,6 @@
 # 使用定制版 confd 以无侵入方式使用 ACM 配置 {#concept_1079408 .concept}
 
-confd 是一款开源轻量配置管理工具，通过将存储于 etcd、dynamodb、redis、vault、zookeeper 等后端存储系统的数据与配置模板结合起来使用，可实现保持配置处于最新状态的目的。本文以支持 ACM 定制版 confd 为例，介绍如何使用 confd 以无侵入的方式使用 ACM 配置。
+confd 是一款开源轻量配置管理工具，通过将存储于 etcd、Dynamodb、Redis、Vault、Zookeeper 等后端存储系统的数据与配置模板结合起来使用，可实现保持配置处于最新状态的目的。confd 支持的后端存储系统不包括 ACM，因此本文以支持 ACM 的定制版 confd 为例，介绍如何使用 confd 以无侵入的方式使用 ACM 配置。
 
 ## 教程概述 {#section_bmw_ncz_33b .section}
 
@@ -70,8 +70,11 @@ confd 是一款开源轻量配置管理工具，通过将存储于 etcd、dynamo
     vim /etc/confd/conf.d/myconfig.toml
     ```
 
-    在该资源配置文件中添加以下内容。src 参数指定 confd 模板文件，dest 参数指定生成的配置文件，keys 参数指定将模板渲染成配置文件所需的配置内容。
+    在该资源配置文件中添加以下内容。
 
+    -   src 参数指定 confd 模板文件
+    -   dest 参数指定生成的配置文件
+    -   keys 参数指定将模板渲染成配置文件所需的配置内容
     ``` {#codeblock_jx6_8cs_q4z}
     [template]
     src = "myconfig.conf.tmpl"
@@ -104,7 +107,7 @@ confd 是一款开源轻量配置管理工具，通过将存储于 etcd、dynamo
     ```
 
 
-启动 confd 后，如果在 /tmp 目录下生成了包含以下内容的 myconfig.conf 文件，则说明执行成功。
+启动 confd 后，如果在 /tmp 目录下生成了包含以下内容的 myconfig.conf 文件，则说明 confd 已成功获取 ACM 配置内容。
 
 ``` {#screen_08s_afr_ovt .screen}
 database.url = jdbc:mysql://localhost:3306/dbName
