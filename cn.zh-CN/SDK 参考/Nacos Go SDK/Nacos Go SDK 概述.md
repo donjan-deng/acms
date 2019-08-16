@@ -5,7 +5,7 @@
 ## 准备工作 {#section_qbn_81q_l6b .section}
 
 -   [在本地安装 Go](https://golang.org/doc/install)
--   [获取 Nacos Go SDK](github.com/nacos-group/nacos-sdk-go)
+-   [获取 Nacos Go SDK](https://github.com/nacos-group/nacos-sdk-go)
 
 ## 公共参数 {#section_75x_a3o_apk .section}
 
