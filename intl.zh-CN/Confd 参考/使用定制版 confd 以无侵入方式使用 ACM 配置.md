@@ -20,28 +20,24 @@ confd 是一款开源轻量配置管理工具，通过将存储于 etcd、Dynamo
 
 请按照以下步骤安装定制版 confd。
 
-警告：
-
-该定制版 confd 为测试版，建议仅用于测试环境。待正式版发布后即可用于生产环境。
-
 1.  创建 confd 目录，并将 confd 源码下载至该目录。
 
     ``` {#codeblock_7ny_984_mdy}
     mkdir -p $GOPATH/src/github.com/kelseyhightower
     cd $GOPATH/src/github.com/kelseyhightower
-    wget https://github.com/nacos-group/nacos-confd/archive/v0.17.0-alpha4.tar.gz
+    wget https://github.com/nacos-group/nacos-confd/archive/v0.18.0.tar.gz
     ```
 
 2.  解压下载的 confd 源码。
 
     ``` {#codeblock_n9j_yv4_3u3}
-    tar -xvf v0.17.0-alpha4.tar.gz
+    tar -xvf v0.18.0.tar.gz
     ```
 
-3.  将 nacos-confd-0.17.0-alpha4 移动至 confd 目录，并在该目录中通过编译命令生成可执行文件。
+3.  将 nacos-confd-0.18.0 移动至 confd 目录，并在该目录中通过编译命令生成可执行文件。
 
     ``` {#codeblock_cvv_a8d_ng5}
-    mv nacos-confd-0.17.0-alpha4 confd
+    mv nacos-confd-0.18.0 confd
     cd confd
     make
     ```
