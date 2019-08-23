@@ -28,8 +28,8 @@ http://${地址服务器域名}:8080/diamond-server/diamond
 |华东 2（上海）|addr-sh-internal.edas.aliyun.com|
 |华北 2（北京）|addr-bj-internal.edas.aliyun.com|
 |华南 1（深圳）|addr-sz-internal.edas.aliyun.com|
-|香港|addr-hk-internal.edas.aliyuncs.com|
-|新加坡|addr-singapore-internal.edas.aliyun.com|
+|中国（香港）|addr-hk-internal.edas.aliyuncs.com|
+|新加坡（新加坡）|addr-singapore-internal.edas.aliyun.com|
 |澳大利亚（悉尼）|addr-ap-southeast-2-internal.edas.aliyun.com|
 |美国（硅谷）|addr-us-west-1-internal.acm.aliyun.com|
 |美国（弗吉尼亚）|addr-us-east-1-internal.acm.aliyun.com|
