@@ -25,19 +25,19 @@ confd 是一款开源轻量配置管理工具，通过将存储于 etcd、Dynamo
     ``` {#codeblock_7ny_984_mdy}
     mkdir -p $GOPATH/src/github.com/kelseyhightower
     cd $GOPATH/src/github.com/kelseyhightower
-    wget https://github.com/nacos-group/nacos-confd/archive/v0.18.0.tar.gz
+    wget https://github.com/nacos-group/nacos-confd/archive/v0.19.0.tar.gz
     ```
 
 2.  解压下载的 confd 源码。
 
     ``` {#codeblock_n9j_yv4_3u3}
-    tar -xvf v0.18.0.tar.gz
+    tar -xvf v0.19.0.tar.gz
     ```
 
-3.  将 nacos-confd-0.18.0 移动至 confd 目录，并在该目录中通过编译命令生成可执行文件。
+3.  将 nacos-confd-0.19.0 移动至 confd 目录，并在该目录中通过编译命令生成可执行文件。
 
     ``` {#codeblock_cvv_a8d_ng5}
-    mv nacos-confd-0.18.0 confd
+    mv nacos-confd-0.19.0 confd
     cd confd
     make
     ```
