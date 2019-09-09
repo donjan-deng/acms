@@ -1,16 +1,16 @@
 # Use cases {#concept_ebf_n1t_42b .concept}
 
-As one of the most widely used middleware products, ACM has been adopted extensively to manage configurations of Alibaba’s internal applications since 2008. ACM has a wide range of use cases in many core scenarios.  This topic describes a few typical scenarios where ACM is used.
+As one of the most widely used middleware products, ACM has been adopted extensively to manage configurations of Alibaba’s internal applications since 2008. ACM has a wide range of use cases in many core scenarios. This topic describes a few typical scenarios where ACM is used.
 
 ## Configuration management under the microservice application architecture {#section_xzm_41t_42b .section}
 
-Under the microservice architecture, configuration management \(such as DB\_URL access information, service connection pool, and internal cache size of services\) becomes cumbersome as the number of applications and machines increases.  In this case, configuration distribution across multiple machines in a single application, and application-to-application configuration dependency can be great challenges.
+Under the microservice architecture, configuration management \(such as DB\_URL access information, service connection pool, and internal cache size of services\) becomes cumbersome as the number of applications and machines increases. In this case, configuration distribution across multiple machines in a single application, and application-to-application configuration dependency can be great challenges.
 
 In traditional architecture, the entire application must be re-packaged and published again even though only one configuration item is modified. This process is complex and error-prone, as shown in the following figure.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_config_update_traditional_en.png)
 
-In an ACM-based microservice scenario, important application configuration information is published to ACM.  The release of new configurations does not require configuration packaging.  The applications take effect immediately after the new configurations are released, as shown in the following figure.
+In an ACM-based microservice scenario, important application configuration information is published to ACM. The release of new configurations does not require configuration packaging. The applications take effect immediately after the new configurations are released, as shown in the following figure.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_config_update_acm_en.png)
 
@@ -26,7 +26,7 @@ Under various distributed architectures, it is critical to optimize service gove
 
 Take request throttling and service degradation as an example. During Alibaba’s Double 11 events, each operation related to request throttling or service degradation requires response within seconds. This can be achieved using ACM.
 
-In this process, the server of each RPC listens for the service rate limiting information by registering listeners through ACM.  When an application requires rate throttling, the administrator performs request control in the service governance console. Then, the service governance system pushes the throttling information through ACM to the target application server to enable the corresponding configuration to take appropriate throttling action.
+In this process, the server of each RPC listens for the service rate limiting information by registering listeners through ACM. When an application requires rate throttling, the administrator performs request control in the service governance console. Then, the service governance system pushes the throttling information through ACM to the target application server to enable the corresponding configuration to take appropriate throttling action.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_service_governance_en.png)
 
@@ -40,7 +40,7 @@ ACM brings the following benefits to service governance under distributed archit
 
 Other typical use cases of ACM include speeding up the rollout of web pages in marketing activities, so as to reduce development costs and improve marketing efficiency.
 
-Take e-commerce operations as an example.  By embedding the ACM configuration \(such as the third-party library version number and the static resource URL\) in the frontend Javascript, operation staff can modify ACM configuration rules using operation tools to bring frontend Javascript presentation into effect when running promotional activities.
+Take e-commerce operations as an example. By embedding the ACM configuration \(such as the third-party library version number and the static resource URL\) in the frontend Javascript, operation staff can modify ACM configuration rules using operation tools to bring frontend Javascript presentation into effect when running promotional activities.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_dynamic_push_en.png)
 
@@ -52,7 +52,7 @@ ACM brings the following benefit to configuration push in business scenarios:
 
 In real-time big data computing, calculation parameters are adjusted dynamically to obtain the most accurate real-time calculation results.
 
-Take an APM monitoring system in Alibaba as an example.  The monitoring system dynamically adjusts the threshold values of businesses to control the real-time computing system and create business alarms. The threshold value modification must be completed in real time without application downtime.  The calculated threshold values of the monitoring system are pushed under ACM rules.
+Take an APM monitoring system in Alibaba as an example. The monitoring system dynamically adjusts the threshold values of businesses to control the real-time computing system and create business alarms. The threshold value modification must be completed in real time without application downtime. The calculated threshold values of the monitoring system are pushed under ACM rules.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_big_data_update_en.png)
 
@@ -62,9 +62,9 @@ ACM brings the following benefit to real-time big data computing scenarios:
 
 ## Multi-Site High Availability architecture in enterprise Internet architectures {#section_k1n_41t_42b .section}
 
-Multi-Site High Availability solution is an advanced disaster recovery architecture in enterprise Internet architectures.  Compared with the traditional disaster recovery architecture, it features quick business recovery, low capacity requirements, and effective and simple maintenance.  Currently, the Multi-Site High Availability architecture has been widely used in companies like Alibaba and Ele.me.
+Multi-Site High Availability solution is an advanced disaster recovery architecture in enterprise Internet architectures. Compared with the traditional disaster recovery architecture, it features quick business recovery, low capacity requirements, and effective and simple maintenance. Currently, the Multi-Site High Availability architecture has been widely used in companies like Alibaba and Ele.me.
 
-At Alibaba, the core algorithms, ID shards and relevant routing rules of the Multi-Site High Availability architecture are all pushed by ACM dynamically. The related clients and servers, such as RPC, MQ, and DB are embedded with the routing path.  During a disaster recovery drill test or when a real disaster occurs, the administrator only needs to dynamically push the rules, and these rules will have an affect on every architecture component.  This is shown in the following figure.
+At Alibaba, the core algorithms, ID shards and relevant routing rules of the Multi-Site High Availability architecture are all pushed by ACM dynamically. The related clients and servers, such as RPC, MQ, and DB are embedded with the routing path. During a disaster recovery drill test or when a real disaster occurs, the administrator only needs to dynamically push the rules, and these rules will have an affect on every architecture component. This is shown in the following figure.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_msha_en.png)
 
