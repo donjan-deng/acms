@@ -11,13 +11,13 @@
 
 针对消息订阅者的消费延时流控的基本原理是，每次消费时在客户端增加一个延时来控制消费速度，此时理论上消费并发最快速度为：
 
-```
+``` {#codeblock_6xx_rw5_9wo}
 MaxRate = 1 / ConsumInterval * ConcurrentThreadNumber
 ```
 
 如果消息并发消费线程（ConcurrentThreadNumber）为 20，延时（ConsumInterval）为 100 ms，代入上述公式可得：
 
-```
+``` {#codeblock_uyq_hly_dcy}
 200 = 1 / 0.1 * 20
 ```
 
@@ -39,7 +39,7 @@ MaxRate = 1 / ConsumInterval * ConcurrentThreadNumber
 
 ## 代码示例 {#section_lbm_qjc_p2b .section}
 
-以下章节给出了基于配置中心来实现异步消息消费的全局动态流控的代码示例。关于 SDK 的详细介绍，参见 [消息队列 RocketMQ](https://www.alibabacloud.com/help/doc-detail/29530.htm) 和[应用配置管理 ACM](../../../../../intl.zh-CN/SDK 参考/SDK 简介.md#) 产品官方文档。
+以下章节给出了基于配置中心来实现异步消息消费的全局动态流控的代码示例。关于 SDK 的详细介绍，参见 [消息队列 RocketMQ](https://www.alibabacloud.com/help/doc-detail/29532.htm) 和[应用配置管理 ACM](../../../../intl.zh-CN/SDK 参考/SDK 简介.md#) 产品官方文档。
 
 ## 创建 ACM 配置 {#section_mbm_qjc_p2b .section}
 
@@ -51,7 +51,7 @@ MaxRate = 1 / ConsumInterval * ConcurrentThreadNumber
 
 1.  设置消费接收延时的全局变量。
 
-    ```
+    ``` {#codeblock_j75_cim_5m2}
     // 初始化消息接收延时参数，单位为millisecond
      static int RCV_INTERVAL_TIME = 10000;
      // 初始化配置服务，控制台通过示例代码自动获取下面参数
@@ -69,7 +69,7 @@ MaxRate = 1 / ConsumInterval * ConcurrentThreadNumber
 
 2.  设置 ACM listener，确保当配置被修改时，RCV\_INTERVAL\_TIME 参数即时更新。
 
-    ```
+    ``` {#codeblock_8tn_94o_914}
     // 初始化的时候，给配置添加监听,配置变更会回调通知
      ConfigService.addListener("app.mq.qos", "DEFAULT_GROUP", new ConfigChangeListener() {
          public void receiveConfigInfo(String configInfo) {
@@ -94,7 +94,7 @@ MaxRate = 1 / ConsumInterval * ConcurrentThreadNumber
 -   本例中 RCV\_INTERVAL\_TIME 参数的访问刻意没有加锁，原因不做赘述。
 -   Aliyun ONS Client 不提供动态线程并发数，默认并发为 20。因此本例正好使用消费延时参数来动态调节 QoS。
 
-```
+``` {#codeblock_rfk_92s_li1}
 //以下代码可直接贴在Main()函数里
 Properties properties = new Properties();
 properties.put(PropertyKeyConst.ConsumerId, "CID_consumer_group");
