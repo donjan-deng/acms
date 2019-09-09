@@ -4,18 +4,18 @@ If an application is deployed on multiple servers, once you need to change the c
 
 ## Prerequisites {#section_ctk_qft_42b .section}
 
--   You finished the following task: [Activate ACM](reseller.en-US/Quick Start/Activate ACM.md#).
+-   You finished the following task: [Activate ACM](intl.en-US/Quick Start/Activate ACM.md#).
 -   [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) has been installed on the server, and the environment variable JAVA\_HOME has been set.
 
 ## Context {#section_ds5_qft_42b .section}
 
 The business application myapp.jar is deployed to two servers in the production environment. This application has a configuration file app.cfg, which contains two configuration items: threadPoolSize and logLevel. Now, you need to adjust the configuration of the application on these two servers simultaneously and refresh the status of the application dynamically. The scenario is shown in the following figure:
 
-![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_dynamic_config_update_with_acm_en.png) 
+![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/dg_dynamic_config_update_with_acm_en.png)
 
 The configuration body:
 
-```
+``` {#codeblock_nks_wpz_p88}
 ## app.cfg ##
 threadPoolSize=5
 logLevel=WARN
@@ -25,10 +25,10 @@ In this example, first we create a configuration for the application myapp on AC
 
 ## Step 1: Create the configuration in ACM {#section_ljb_bgt_42b .section}
 
-1.  Log on to the .
+1.  Log on to the [ACM console](https://acm.console.alibabacloud.com/).
 2.  In the left-side navigation pane, select **Configurations**, and then click the **+** button in the upper-right corner.
 
-    ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/bt_create_configuration_en.png) 
+    ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/bt_create_configuration_en.png)
 
 3.  Enter the following data on the Create Configuration page, and click **Publish**.
 
@@ -36,7 +36,7 @@ In this example, first we create a configuration for the application myapp on AC
     -   Group: myapp
     -   Configuration body:
 
-        ```
+        ``` {#codeblock_bue_gp8_lrs}
         threadPoolSize=5
         logLevel=WARN
         ```
@@ -52,13 +52,13 @@ In this example, first we create a configuration for the application myapp on AC
 
     **Note:** For instructions on how to install and use Maven, see [Maven documentation](https://maven.apache.org/).
 
-    ```
+    ``` {#codeblock_hiz_5u2_6ll}
     mvn archetype:generate -DgroupId=com.acm.sample -DartifactId=myapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
     The created project structure is as follows:
 
-    ```
+    ``` {#codeblock_pj5_q49_boi}
     myapp
     |---pom.xml
     `--  src
@@ -78,7 +78,7 @@ In this example, first we create a configuration for the application myapp on AC
 
 2.  Add ACM client native API dependencies in POM. xml.
 
-    ```
+    ``` {#codeblock_vlv_jrr_d2z}
     <dependencies>
          <dependency>
              <groupId>com.alibaba.edas.acm</groupId>
@@ -96,7 +96,7 @@ In this example, first we create a configuration for the application myapp on AC
 
 3.  Add the raven-assembly-plugin packaging plug-in pom.xml.
 
-    ```
+    ``` {#pre_39p_ol7_a2j}
     <plugin>
        <artifactId>maven-assembly-plugin</artifactId>
        <version>2.4</version>
@@ -130,7 +130,7 @@ In this example, first we create a configuration for the application myapp on AC
 
     ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/ex_db_namespace_details_en.png)
 
-    ```
+    ``` {#codeblock_2vk_94f_yeu}
     //-- App.java
     package com.acm.sample;
     
@@ -211,13 +211,13 @@ In this example, first we create a configuration for the application myapp on AC
 
 1.  Package your application into a JAR file and copy it to both servers. Execute the following packaging command under the root directory of the project:
 
-    ```
+    ``` {#codeblock_6cv_l7z_amz}
     mvn clean package
     ```
 
 2.  Deploy and start the application in Shell.
 
-    ```
+    ``` {#codeblock_av7_27z_3ol}
     ${JAVA_HOME}/java -cp myapp.jar com.acm.sample.App
     ```
 
@@ -230,7 +230,7 @@ In this example, first we create a configuration for the application myapp on AC
 2.  In the **Actions** column, click **Edit**.
 3.  On the Edit Configuration page, change the configuration body as follows and click **Publish**.
 
-    ```
+    ``` {#codeblock_te3_mgl_f59}
     threadPoolSize=15
     logLevel=DEBUG
     ```
@@ -244,7 +244,7 @@ In this example, first we create a configuration for the application myapp on AC
 
 After the configuration is published, we can see that the configuration changes are received simultaneously on both servers on which the application is deployed, and the following information is printed.
 
-```screen
+``` {#screen_v5q_q2h_ctz .screen}
 current thread pool size: 15
 current log level: DEBUG
 ```
