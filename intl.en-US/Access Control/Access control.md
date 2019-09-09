@@ -30,7 +30,7 @@ Resource
 
     For example, to configure the read and write access for namespace `1ca01ca0-11b0-1e01-0df1-d1010101bc10`, please enter the following content in the **Policy Content** textbox:
 
-    ```
+    ``` {#codeblock_ouy_n24_jtu}
     {
     "Version": "1",
     "Statement": [
@@ -45,7 +45,7 @@ Resource
     }
     ```
 
-    **Note:** For instructions on how to create a custom RAM authorization policy, see [Create a custom policy \(optional\)](../../../../reseller.en-US/Quick Start/Create a custom policy (optional).md#).
+    **Note:** For instructions on how to create a custom RAM authorization policy, see [\(Optional\) Create a custom policy](../../../../intl.en-US/Quick Start/(Old Version) Quick Start/(Optional) Create a custom policy.md#).
 
 
 ## Step 2: Create a RAM user {#section_stc_mr5_42b .section}
@@ -63,7 +63,7 @@ Resource
 
 **Note:** 
 
-For instructions on how to create and authorize RAM users, see [Create a RAM user](../../../../reseller.en-US/Quick Start/Create a RAM user.md#) and [Attach policies to a RAM user](../../../../reseller.en-US/Quick Start/Attach policies to a RAM user.md#).
+For instructions on how to create and authorize RAM users, see [Create a RAM user](../../../../intl.en-US/Quick Start/(Old Version) Quick Start/Create a RAM user.md#) and [Authorize RAM users](../../../../intl.en-US/Quick Start/(Old Version) Quick Start/Authorize RAM users.md#).
 
 ## Step 3: Log on with the RAM user and verify the access {#section_dy1_pr5_42b .section}
 
@@ -75,7 +75,7 @@ For instructions on how to create and authorize RAM users, see [Create a RAM use
 
 1.  Grant the read-only access to a single namespace \(for example `1ca01ca0-11b0-1e01-0df1-d1010101bc10`\)
 
-    ```
+    ``` {#codeblock_6h9_esg_8ph}
     {
     "Version": "1",
     "Statement": [
@@ -92,7 +92,7 @@ For instructions on how to create and authorize RAM users, see [Create a RAM use
 
 2.  Grant the read and write access to a single group \(for example `DEFAULT_GROUP`\) within a single namespace \(for example `1ca01ca0-11b0-1e01-0df1-d1010101bc10`\)
 
-    ```
+    ``` {#codeblock_dq2_ny2_zg0}
     {
     "Version": "1",
     "Statement": [
@@ -109,7 +109,7 @@ For instructions on how to create and authorize RAM users, see [Create a RAM use
 
 3.  Grant the read-only access to multiple groups \(for example `DEFAULT_GROUP` and `DEFAULT_GROUP_1`\) within a single namespace \(for example `1ca01ca0-11b0-1e01-0df1-d1010101bc10`\)
 
-    ```
+    ``` {#codeblock_2sk_abg_n4b}
     {
     "Version": "1",
     "Statement": [
@@ -129,7 +129,7 @@ For instructions on how to create and authorize RAM users, see [Create a RAM use
 
 4.  Grant the read and write access to a single group \(for example DEFAULT\_GROUP\) within all namespaces
 
-    ```
+    ``` {#codeblock_6a5_0xk_id9}
     {
     "Version": "1",
     "Statement": [
@@ -151,14 +151,14 @@ For instructions on how to create and authorize RAM users, see [Create a RAM use
 
 -   Only when the authorization policy Action is `acms:*`, and the Resource is `*`, users \(or roles\) granted this policy can add, delete, or modify namespaces.
 -   Due to the cache system, it usually takes about 10 seconds for added and modified authorization policies to be effective.
--   [Access ACM with instance RAM role](reseller.en-US/User Guide/Access ACM with instance RAM role.md#) : you can also achieve access control of finer granularity by granting the aforementioned authorization policy.
+-   [EN-US\_TP\_15962.md\#](intl.en-US/Access Control/Access ACM with instance RAM role.md#) : you can also achieve access control of finer granularity by granting the aforementioned authorization policy.
 
 ## Related documents {#section_ugy_5r5_42b .section}
 
--   [What is RAM](../../../../reseller.en-US/Product Introduction/What is RAM.md#)
--   [Create a custom policy \(optional\)](../../../../reseller.en-US/Quick Start/Create a custom policy (optional).md#)
--   [Create a RAM user](../../../../reseller.en-US/Quick Start/Create a RAM user.md#)
--   [Attach policies to a RAM user](../../../../reseller.en-US/Quick Start/Attach policies to a RAM user.md#)
--   [Policy syntax structure](../../../../reseller.en-US/User Guide/Policy Language/Policy syntax structure.md#)
--   [Access ACM with instance RAM role](reseller.en-US/User Guide/Access ACM with instance RAM role.md#)
+-   [What is RAM?](../../../../intl.en-US/Product Introduction/What is RAM?.md#)
+-   [\(Optional\) Create a custom policy](../../../../intl.en-US/Quick Start/(Old Version) Quick Start/(Optional) Create a custom policy.md#)
+-   [Create a RAM user](../../../../intl.en-US/Quick Start/(Old Version) Quick Start/Create a RAM user.md#)
+-   [Authorize RAM users](../../../../intl.en-US/Quick Start/(Old Version) Quick Start/Authorize RAM users.md#)
+-   [Policy structure and grammar](../../../../intl.en-US/User Guide/(Old Version) User Guide/Policy Language/Policy structure and grammar.md#)
+-   [EN-US\_TP\_15962.md\#](intl.en-US/Access Control/Access ACM with instance RAM role.md#)
 
