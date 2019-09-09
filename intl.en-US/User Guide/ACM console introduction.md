@@ -4,7 +4,7 @@ The ACM console is the workbench for configuration management.  This topic desc
 
 The ACM console consists of the following areas:
 
- 
+![](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/acms/pg_config_list_en.png "ACM console")
 
 -   \[A\] Top navigation bar: Shows menus of Regions, Messages, Tickets and so on.
 -   \[B\] Left-side navigation pane: Allows you to navigate to each sub-module, including configuration list, historical versions, listening query, push tracks, and namespaces.
